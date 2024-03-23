@@ -27,6 +27,14 @@ function createImageElement(topic){
     return imgElement;
 }
 
+function createProgramsElement(topic){
+    const programsElement = document.createElement("p");
+    programsElement.hidden = true;
+    programsElement.className = "hiddenClass";
+    programsElement.textContent = topic;
+    return programsElement;
+}
+
 
 // Method for iterating over the topics inside the JSON file, to improve modularity and code readability by reducing repitition. 
 
@@ -34,16 +42,18 @@ function iterateOverTopics(topics, container){
     topics.forEach((topic) => {
         const nameElement = createNameElement(topic.name);
         const descriptionElement = createDescriptionElement(topic.description);
+        const programsElement = createProgramsElement(topic.programs);
         const imgElement = createImageElement(topic.cover_image);
         container.appendChild(nameElement);
-        nameElement.appendChild(descriptionElement);
+        nameElement.appendChild(descriptionElement); //Added as child to be included within search function.
         nameElement.appendChild(imgElement);
+        nameElement.appendChild(programsElement);
     });
     return topics;
 }
 
 
-// These two functions will process two independent pieces of data, the first 4 topics and the rest. 
+// These two process functions will process two independent pieces of data, the first 4 topics and the rest. 
 // When initially looking over the JSON object, they appeared to have differing semantic meanings so I wished to split them up individually.
 async function processUniversityInfo(topics){
     const generalInfoContainer = document.getElementById("generalInfo");
@@ -81,17 +91,22 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 // Searching for a name value, as it's an easy metric for the user to search for. 
-// To do: Lowercase check
+// To do: Lowercase check (done)
 // To do: Apply hidden values. 
 const nameSearch = document.getElementById("nameSearch");
 nameSearch.addEventListener("keyup", (e) =>{
     let currentValue = e.target.value;
     let nameValue = document.querySelectorAll(".departName");
+    let visabilityClass = document.querySelectorAll(".hiddenClass");
     nameValue.forEach((name) => {
-        if (name.textContent.includes(currentValue)){
+        if (name.textContent.toLowerCase().includes(currentValue.toLowerCase())){
             name.style.display ="block";
+            visabilityClass.hidden = false;
         } else{
             name.style.display = "none";
         }
+    });
+    visabilityClass.forEach((element) =>{
+        element.hidden = currentValue === "";
     })
 })
