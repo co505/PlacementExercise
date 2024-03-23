@@ -22,12 +22,12 @@ The JSON was parsed before development began to get an idea for the structure.
 
 
 <u>Post-Development Reflection</u>
-** Search function is slightly flawed ** - I believe it searches through and returns the descriptions of each topic, rather then just the name, as I intended. Potentially this is an issue caused by making the descriptions a child-element to the name element?
+**Search function is slightly flawed** - I believe it searches through and returns the descriptions of each topic, rather then just the name, as I intended. Potentially this is an issue caused by making the descriptions a child-element to the name element?\
 
-** The search function is unefficiently written ** – The function should be split into differing methods to improve the modularity of the code, right now, it handles a lot of logic inside it. 
+**The search function is unefficiently written** – The function should be split into differing methods to improve the modularity of the code, right now, it handles a lot of logic inside it.\
 
-**Front-end display of programs is flawed ** - The ‘programs’ section in the JSON has it’s own structure that would need to be independently sorted and styled. Time constraints make it difficult to do this, so this would need to be addressed in further development. 
+**Front-end display of programs is flawed** - The ‘programs’ section in the JSON has it’s own structure that would need to be independently sorted and styled. Time constraints make it difficult to do this, so this would need to be addressed in further development.\
 
-** Images are styled within the JS function, createImageElement ** - More of a formatting suggestion, but potentially re factoring this into it’s own CSS class could improve the readability in further development. 
+**Images are styled within the JS function, createImageElement** - More of a formatting suggestion, but potentially re factoring this into it’s own CSS class could improve the readability in further development.\
 
-** Semantic Tagging of HTML elements ** - Semantic tagging should be enhanced in further development, to aid the ability for screen readers to parse over the webpage effectively.
+**Semantic Tagging of HTML elements** - Semantic tagging should be enhanced in further development, to aid the ability for screen readers to parse over the webpage effectively.\
