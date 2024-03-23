@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 // Searching for a name value, as it's an easy metric for the user to search for. 
 // To do: Lowercase check (done)
-// To do: Apply hidden values. 
+// To do: Apply hidden values. (done)
 const nameSearch = document.getElementById("nameSearch");
 nameSearch.addEventListener("keyup", (e) =>{
     let currentValue = e.target.value;
