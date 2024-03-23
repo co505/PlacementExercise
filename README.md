@@ -3,6 +3,12 @@ Placement Exercise - Connor Brock.
 
 <ins>Web Developer - Exercise</ins>
 
+<ins> Tech Stack </ins> <br>
+HTML, CSS (Tailwind), JavaScript.<br>
+
+Note: Tailwind may require external installation using the npm, please see here: https://tailwindcss.com/docs/installation. 
+Although, checked on external machines without Tailwind installed and it runs correctly.
+
 <ins> Time Structure </ins> <br>
 20-30 minutes planning. 
 1 hour of development. 
