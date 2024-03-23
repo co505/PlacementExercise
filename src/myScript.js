@@ -19,11 +19,12 @@ function createDescriptionElement(topic){
 
 function createImageElement(topic){
     const imgElement = document.createElement("img");
-    imgElement.src = topic;
+    imgElement.src = topic; 
     imgElement.hidden = true; 
-    imgElement.style.width = '600px';
+    imgElement.style.width = '600px'; // Should be placed inside it's own CSS class for readability. 
     imgElement.style.height = '300px';
     imgElement.classList = 'hiddenClass'
+    // To do: Alt text.
     return imgElement;
 }
 
@@ -45,7 +46,7 @@ function iterateOverTopics(topics, container){
         const programsElement = createProgramsElement(topic.programs);
         const imgElement = createImageElement(topic.cover_image);
         container.appendChild(nameElement);
-        nameElement.appendChild(descriptionElement); //Added as child to be included within search function.
+        nameElement.appendChild(descriptionElement); // Appended as child to be included within search function.
         nameElement.appendChild(imgElement);
         nameElement.appendChild(programsElement);
     });
@@ -99,14 +100,14 @@ nameSearch.addEventListener("keyup", (e) =>{
     let nameValue = document.querySelectorAll(".departName");
     let visabilityClass = document.querySelectorAll(".hiddenClass");
     nameValue.forEach((name) => {
-        if (name.textContent.toLowerCase().includes(currentValue.toLowerCase())){
-            name.style.display ="block";
-            visabilityClass.hidden = false;
-        } else{
-            name.style.display = "none";
+        if (name.textContent.toLowerCase().includes(currentValue.toLowerCase())){ //Search in lowercase only, so capitalisation isn't required for accuracy. 
+            name.style.display ="block"; // Displays correct search result.
+            visabilityClass.hidden = false; // Un-hides element with the class, hiddenClass.
+        } else {
+            name.style.display = "none"; // Hides the incorrect search results.
         }
     });
     visabilityClass.forEach((element) =>{
-        element.hidden = currentValue === "";
+        element.hidden = currentValue === ""; //For each element, hide the element if the search bar is empty. 
     })
 })
