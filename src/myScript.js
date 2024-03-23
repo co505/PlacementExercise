@@ -21,6 +21,13 @@ async function processUniversityInfo(topics){
     return generalTopics;
 } 
 
+async function processDepartmentInfo(topics){
+    const departInfoContainer = document.getElementById("departInfo");
+    const departInfoTopics = topics.slice(4);
+    iterateOverTopics(departInfoTopics, departInfoContainer);
+    return departInfoTopics;
+}
+
 
 async function fetchData(){
     try {
@@ -28,6 +35,7 @@ async function fetchData(){
         const data = await response.json();
         // console.log(data); Quick check if data has pulled through from JSON file. 
         await processUniversityInfo(data.topics);
+        await processDepartmentInfo(data.topics);
         return data;
     } catch (error){
         console.log(error);
