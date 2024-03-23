@@ -5,11 +5,28 @@ function createNameElement(topic){
     return nameElement;
 }
 
+function createDescriptionElement(topic){
+    const descriptionElement = document.createElement("p");
+    descriptionElement.textContent = topic;
+    return descriptionElement;
+}
+
+
+function createImageElement(topic){
+    const imgElement = document.createElement("img");
+    imgElement.src = topic;
+    return imgElement;
+}
+
 
 function iterateOverTopics(topics, container){
     topics.forEach((topic) => {
         const nameElement = createNameElement(topic.name);
+        const descriptionElement = createDescriptionElement(topic.description);
+        const imgElement = createImageElement(topic.cover_image);
         container.appendChild(nameElement);
+        nameElement.appendChild(descriptionElement);
+        nameElement.appendChild(imgElement);
     });
     return topics;
 }
