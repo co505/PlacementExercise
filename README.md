@@ -23,7 +23,7 @@ The JSON was parsed before development began to get an idea for the structure.
 2.	There will be multiple different functions to implement which create differing elements for each specific part of the JSON, e.g. description, name, programs, to improve coupling (and therefore modularity).
 3.	As programs is an array of objects, it’s function will require it’s own nested iteration and creation of elements. 
 4.	As this is a front-end project, try and fit all the content into one web-page. We won’t have the back-end to manage interactions between URL paths, therefore developing a search function which expands information requested by the user should be high priority.
-5.	Due to time constraints, you could use a CSS framework (Tailwind) to quickly style the web page for a sufficient user experience. 
+5.	Due to time constraints, a CSS framework (Tailwind) will be used to quickly style the web page for a sufficient user experience. Functionality will be prioritised over styling. 
 6.	The first 4 elements (General, Students Union, Sport, Residences) have a different semantic meaning the the rest. The rest seems to be departments of the university. Potentially use the slice method to split these two groups up. 
 
 
