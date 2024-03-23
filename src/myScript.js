@@ -47,3 +47,16 @@ async function fetchData(){
 document.addEventListener("DOMContentLoaded", (event) => {
     fetchData();
 });
+
+const nameSearch = document.getElementById("nameSearch");
+nameSearch.addEventListener("keyup", (e) =>{
+    let currentValue = e.target.value;
+    let nameValue = document.querySelectorAll(".departName");
+    nameValue.forEach((name) => {
+        if (name.textContent.includes(currentValue)){
+            name.style.display ="block";
+        } else{
+            name.style.display = "none";
+        }
+    })
+})
