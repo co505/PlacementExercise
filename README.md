@@ -1,5 +1,5 @@
 # Placement Exercise
-Placement Exercise - Connor Brock.
+Placement Exercise.
 
 <ins>Web Developer - Exercise</ins>
 
